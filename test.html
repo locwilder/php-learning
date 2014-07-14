@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Select DIV to show</title>
+<script type="text/javascript">
+function show(obj) {
+no = obj.options[obj.selectedIndex].value;
+count = obj.options.length;
+for(i=1;i<count;i++)
+document.getElementById('myDiv'+i).style.display = 'none';
+if(no>0)
+document.getElementById('myDiv'+no).style.display = 'block';
+}
+</script>
+</head>
+<body>
+
+<select onChange="show(this)">
+<option value="0">Select</option>
+<option value="1">One</option>
+<option value="2">Two</option>
+</select>
+
+
+<div id="myDiv1" style="display:none">test1</div>
+<div id="myDiv2" style="display:none">test2</div>
+</body>
+</html>
